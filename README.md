@@ -1,11 +1,12 @@
 # Hack The Commute: Blind Spot
 
-The purpose of this app is to provide an easy, quick, modern, open source, and multi-modal utility for crowd-sourcing input from citizens about
-everything from problem spots in their neighborhoods to possible improvements to incidents (minor crashes, near misses, etc).
+The purpose of this app is to provide an easy, quick, modern, open source, and multi-modal utility for crowd-sourcing input from citizens about everything from problem spots in their neighborhoods to possible improvements to incidents (minor crashes, near misses, etc).
 
 This application was developed on March 20-22, 2015 for [Hack The Commute](https://codeforseattle.hackpad.com/Hack-the-Commute-2h8AsgMYcB8).
 
 ![Isn't our app beautiful?!](screenshot.jpg)
+![Description1](screenshot/1.jpg)
+![Description2](screenshot/2.jpg)
 
 ## Challenge and Approach
 
