@@ -5,6 +5,7 @@ The purpose of this app is to provide an easy, quick, modern, open source, and m
 This application was developed on March 20-22, 2015 for [Hack The Commute](https://codeforseattle.hackpad.com/Hack-the-Commute-2h8AsgMYcB8).
 
 ![Homescreen](/screenshot/1.jpg) Homescreen.
+
 ![Homescreen after crash is reported.](/screenshot/2.jpg) Homescreen after crash is reported.
 
 ## Challenge and Approach
