@@ -1,0 +1,65 @@
+.leaflet-label.btn-report {
+  background-color: rgb(56, 141, 227);
+  color: rgb(255, 255, 255);
+}
+
+#main-map {
+  -webkit-transition: height 1s;
+  -moz-transition: height 1s;
+  -ms-transition: height 1s;
+  -o-transition: height 1s;
+  transition: height 1s;
+}
+
+#map-overlay-dialog {
+  background-color: rgb(74, 79, 111);
+}
+
+.report-type-choice-container {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: rgb(255, 255, 255);
+}
+
+.report-type-choice-container {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.report-type-choice-button-container {
+  margin: 10px;
+}
+
+.report-type-choice-button {
+  text-transform: uppercase;
+}
+
+.report-type-choice-button {
+  text-transform: uppercase;
+}
+
+.report-type-choice-button:hover {
+  color: rgb(255,255,255);
+}
+
+.report-type-choice-button-red {
+  background-color: #dc5563;
+}
+
+.report-type-choice-button-orange {
+  background-color: #fa9d4c;
+}
+
+.report-type-choice-button-green {
+  background-color: #5cb85c;
+}
+
+.report-type-choice-button-purple {
+  background-color: #8d5dd8;
+}
+
+.header h3 {
+  text-align: center;
+}
