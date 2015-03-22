@@ -242,28 +242,6 @@
       this.url = url != null ? url : "http://localhost:8000/api/report";
     }
 
-    ReportService.prototype.createStream = function() {
-      return this.$http.post(this.url + "/data/");
-    };
-
-    ReportService.prototype.insertDatapoint = function(stream_uuid, data) {
-      var fd;
-      fd = new FormData();
-      fd.append('data', new Blob([JSON.stringify(data)], {
-        type: "application/json"
-      }));
-      return this.$http.post(this.url + "/data/" + stream_uuid, fd, {
-        transformRequest: angular.identity,
-        headers: {
-          'Content-Type': void 0
-        }
-      });
-    };
-
-    ReportService.prototype.getLatestDatapoint = function(stream_uuid) {
-      return this.$http.get(this.url + "/data/" + stream_uuid + "/latest");
-    };
-
     return ReportService;
 
   })();
