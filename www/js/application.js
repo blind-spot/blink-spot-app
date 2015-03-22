@@ -15,7 +15,19 @@
 
   LocateMyCar.Angular.Controllers.CarLocationMapController = (function() {
     function CarLocationMapController($scope, $modal, $log, $http) {
-      var CenterOnLastControl, SetCarControl;
+      var CenterOnLastControl, SetCarControl/*, imgURI*/;
+//      imgURI = "/img/shoot.png";
+      navigator.camera.getPicture(function(imgURI) {
+
+        alert("image file: " + imgURI);
+
+    // imageURI is the URL of the image that we can use for
+    // an <img> element or backgroundImage.
+        
+
+      }, function(err) {
+        alert("Camera failed: " + err);
+      }, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
       angular.extend($scope, {
         center: {
           autoDiscover: true
