@@ -32,6 +32,9 @@
         },
         "org.apache.cordova.statusbar": {
             "PACKAGE_NAME": "org.squeaky-citizens.phone"
+        },
+        "mx.ferreyra.callnumber": {
+            "PACKAGE_NAME": "org.squeaky-citizens.phone"
         }
     },
     "dependent_plugins": {}
