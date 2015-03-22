@@ -1,5 +1,5 @@
 (function() {
-  var LocateMyCar, ReportService, app, setHeights;
+  var IncidentCommandController, LocateMyCar, MapOverlayDialogController, ReportCommandController, ReportService, app, setHeights;
 
   if (typeof LocateMyCar === "undefined" || LocateMyCar === null) {
     LocateMyCar = {};
@@ -178,18 +178,152 @@
 
   })();
 
+  IncidentCommandController = (function() {
+    function IncidentCommandController($scope, $modal, $log, $http) {
+      angular.extend($scope, {
+        center: {
+          autoDiscover: true
+        },
+        markers: new Array()
+      });
+      $scope.controls = {
+        custom: []
+      };
+      setHeights();
+    }
+
+    return IncidentCommandController;
+
+  })();
+
+  MapOverlayDialogController = (function() {
+    function MapOverlayDialogController($scope, $modal, $log, $http, leafletData) {
+      this.showIncidentTypeChoices();
+    }
+
+    MapOverlayDialogController.prototype.showIncidentTypeChoices = function() {
+      return console.log("Showing Incident Types");
+    };
+
+    return MapOverlayDialogController;
+
+  })();
+
+  ReportCommandController = (function() {
+    function ReportCommandController($scope, $modal, $log, $http, leafletData) {
+      angular.extend($scope, {
+        center: {
+          autoDiscover: true
+        },
+        markers: new Array(),
+        header_text: "Squeaky Citizens"
+      });
+      $scope.controls = {
+        custom: []
+      };
+      $scope.$on('leafletDirectiveMap.move', function(event, args) {
+        var center, map;
+        map = args.leafletEvent.target;
+        center = map.getCenter();
+        return $scope.markers = {
+          marker: {
+            lat: center.lat,
+            lng: center.lng,
+            label: {
+              message: "Report?",
+              options: {
+                className: "btn-report",
+                clickable: true,
+                noHide: true
+              }
+            }
+          }
+        };
+      });
+      $scope.$on('leafletDirectiveMap.layeradd', function(event, args) {
+        var ref;
+        if (((ref = args.leafletEvent.layer) != null ? ref.showLabel : void 0) != null) {
+          return args.leafletEvent.layer.showLabel();
+        }
+      });
+      $scope.$on('leafletDirectiveLabel.click', function(event, args) {
+        var clearInterval, intervalId, invalidateSize, overlayHeight, totalHeight;
+        totalHeight = $(window).height() - $(".header").height();
+        if ($("#main-map").hasClass("in-dialog")) {
+          $("#main-map").removeClass("in-dialog");
+          $("#main-map").css("height", totalHeight + "px");
+        } else {
+          overlayHeight = $(".report-type-choice-container").outerHeight();
+          $("#main-map").addClass("in-dialog");
+          $("#map-overlay-dialog").css("height", overlayHeight + "px");
+          $("#main-map").css("height", (totalHeight - overlayHeight) + "px");
+        }
+        invalidateSize = function() {
+          return args.leafletEvent.target._map.invalidateSize();
+        };
+        intervalId = window.setInterval(invalidateSize, 50);
+        clearInterval = function() {
+          window.clearInterval(intervalId);
+          return intervalId = null;
+        };
+        return window.setTimeout(clearInterval, 1500);
+      });
+      setHeights();
+    }
+
+    return ReportCommandController;
+
+  })();
+
+  MapOverlayDialogController = (function() {
+    function MapOverlayDialogController($scope, $log, $http, leafletData) {
+      this.showMapOverlayDialog();
+      this.showIncidentTypeChoices($scope);
+    }
+
+    MapOverlayDialogController.prototype.showMapOverlayDialog = function() {
+      $("#map-overlay-dialog").show();
+      return $(".header").show();
+    };
+
+    MapOverlayDialogController.prototype.showIncidentTypeChoices = function($scope) {
+      $scope.title = null;
+      return $scope.choices = [
+        {
+          color: "red",
+          label: "Crash/Near Miss"
+        }, {
+          color: "orange",
+          label: "Problem"
+        }, {
+          color: "green",
+          label: "Solution"
+        }, {
+          color: "purple",
+          label: "Goodness"
+        }
+      ];
+    };
+
+    return MapOverlayDialogController;
+
+  })();
+
   setHeights = function() {
-    var leaflet;
+    var availableHeight, leaflet;
+    availableHeight = $(window).height() - $(".header").height();
     leaflet = $(".angular-leaflet-map");
-    leaflet.css("height", "" + ($(window).height()));
+    leaflet.css("height", "" + availableHeight);
     return leaflet.css("width", "" + ($(window).width()));
   };
 
   $(window).on("orientationchange resize", setHeights);
 
-  app = angular.module("squeaky-citizens", ["leaflet-directive", "ui.bootstrap"]);
+  app = angular.module("squeaky-citizens", ["leaflet-directive", "mgcrea.ngStrap"]);
 
-  app.controller("CarLocationMapController", LocateMyCar.Angular.Controllers.CarLocationMapController);
+  app.controller("ReportCommandController", ReportCommandController);
+
+  app.controller("MapOverlayDialogController", MapOverlayDialogController);
 
   app.controller("SetCarModalController", function($scope, $modalInstance, state, licensePlate, streamUuid) {
     $scope.states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
