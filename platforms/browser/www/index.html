@@ -24,6 +24,7 @@
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <link href="assets/ratchet/css/ratchet.css" rel="stylesheet">
         <link href="assets/css/pageslider.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/index.css" />
@@ -31,19 +32,12 @@
     </head>
     <body>
         <script id="home-tpl" type="text/template">
-          <div class="content-padded">
-            <h1 class="center app-title">Forgotten Incidents</h1>
-            <h5 class="center">Presented By:</h5>
-            <h3 class="center">Squeaky Citizens</h3>
+          <div class="content content-padded home-menu">
+            {{#each buttons}}
+            <a href="{{href}}"><button class="btn"><div class="center fa fa-4x {{icon_classes}}"></div>{{label}}</button></a>
+            {{/each}}
           </div>
         </script>
-        <div class="app">
-            <h1>Forgotten Incidents</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script src="lib/jquery.js"></script>
         <script src="lib/fastclick.js"></script>

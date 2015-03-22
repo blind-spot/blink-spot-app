@@ -113,3 +113,16 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+.content.home-menu {
+  -webkit-column-count: 2;
+}
+
+.content.home-menu .btn {
+  width: 100%;
+  height: 33%;
+}
+
+.content.home-menu .btn div {
+  display: block;
+}
