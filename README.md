@@ -20,6 +20,9 @@ Our approach for satisfying this challenge was to:
 
 Once we did that, we knew we were guaranteed to win!
 
+For the PowerPoint presentation, mock-up images, and other information, check out this Google Folder:
+https://drive.google.com/a/cascadebicycleclub.org/file/d/0B1SDKU5iQGbQM3libUJVSUNISzQ/view?usp=sharing
+
 ## Team Members
 
 Our team is comprised of:
