@@ -5,6 +5,10 @@ setHeights = () ->
   leaflet.css("height","#{availableHeight}")
   leaflet.css("width","#{$(window).width()}")
 
+toggleHeaderButtons = () ->
+  $(".btn-settings").toggle()
+  $(".btn-back").toggle()
+
 $(window).on "orientationchange resize", setHeights
 
 app = angular.module("squeaky-citizens", ["leaflet-directive", "mgcrea.ngStrap"])

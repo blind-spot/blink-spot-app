@@ -1,16 +1,15 @@
-# Evergreen Awesome Hackathon: My Sample App
+# Hack The Commute: Blind Spot
 
-The purpose of this app is to provide an example of how to best format an app submission on [Github](http://github.com) for a hackathon. If you'd like to suggest changes or improvements to this example, feel free to send me a pull request.
+The purpose of this app is to provide an easy, quick, modern, open source, and multi-modal utility for crowd-sourcing input from citizens about
+everything from problem spots in their neighborhoods to possible improvements to incidents (minor crashes, near misses, etc).
 
-This application was developed on February 5th, 2015 for the [Evergreen Awesome Hackthon](http://example.com/this-goes-nowhere).
+This application was developed on March 20-22, 2015 for [Hack The Commute](https://codeforseattle.hackpad.com/Hack-the-Commute-2h8AsgMYcB8).
 
 ![Isn't our app beautiful?!](screenshot.jpg)
 
-Our app is live at http://example.com/awesome-app-that-doesnt-exist. You can log in as the demo user "unicorns" with password "sartfarkles". You can also check out [this demo screencast](https://www.youtube.com/watch?v=dQw4w9WgXcQ) of our application on YouTube.
-
 ## Challenge and Approach
 
-Our submission is for [Challenge #3: Build an app that provides an example of an Awesome Hackathon submission](http://example.com/this-also-goes-nowhere).
+Our submission is for [Challenge #3: Build an app that provides an example of an Awesome Hackathon submission](http://example.com/this-also-goes-nowhere)i
 
 Our approach for satisfying this challenge was to:
 
