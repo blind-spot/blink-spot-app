@@ -17,35 +17,74 @@
     specific language governing permissions and limitations
     under the License.
 -->
-<html>
+<html ng-app="squeaky-citizens" class="ng-scope">
     <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-        <link href="assets/ratchet/css/ratchet.css" rel="stylesheet">
-        <link href="assets/css/pageslider.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Forgotten Incidents</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <!-- Bootstrap -->
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+        <link rel="stylesheet" href="/css/style.css.styl" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     </head>
     <body>
-        <script id="home-tpl" type="text/template">
-          <div class="content content-padded home-menu">
-            {{#each buttons}}
-            <a href="{{href}}"><button class="btn"><div class="center fa fa-4x {{icon_classes}}"></div>{{label}}</button></a>
-            {{/each}}
+        <div ng-controller="CarLocationMapController" class="ng-scope">
+            <script type="text/ng-template" id="setCarModal.html">
+                <div class="modal-header">
+                    <h3 class="modal-title">Set The Car To Park</h3>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label>State:</label>
+                    <select ng-model="state" ng-options="state for state in states track by state" class="form-control">
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>License Plate:</label>
+                    <input type="text" ng-model="licensePlate" class="form-control" />
+                  </div>
+
+                  <p>Or</p>
+
+                  <div class="form-group">
+                    <label>Tracking Uuid:</label>
+                    <input type="text" ng-model="streamUuid" class="form-control" />
+                  </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" ng-click="ok()">OK</button>
+                    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                </div>
+            </script>
+            <script type="text/ng-template" id="confirmCarLocation.html">
+                <div class="modal-header">
+                    <h3 class="modal-title">Is this location correct?</h3>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" ng-click="setLocation()">Yes</button>
+                    <button class="btn btn-warning" ng-click="cancel()">No</button>
+                </div>
+            </script>
+            <leaflet center="center" markers="markers" controls="controls"></leaflet>
           </div>
-        </script>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script src="lib/jquery.js"></script>
-        <script src="lib/fastclick.js"></script>
-        <script src="lib/handlebars.js"></script>
-        <script src="lib/pageslider.js"></script>
-        <script src="lib/router.js"></script>
-        <script src="js/views/HomeView.js"></script>
-        <script src="js/services/json/ReportService.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.js"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.js"></script>
+          <script src="/js/ui-bootstrap-tpls-0.12.1.js"></script>
+          <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+          <script src="/js/angular-leaflet-directive.js"></script>
+
+          <script src="/js/application.js"></script>
+        </div>
     </body>
 </html>
