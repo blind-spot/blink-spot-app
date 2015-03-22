@@ -10,15 +10,13 @@ This application was developed on March 20-22, 2015 for [Hack The Commute](https
 
 ## Challenge and Approach
 
-Our submission is for [Challenge #3: Build an app that provides an example of an Awesome Hackathon submission](http://example.com/this-also-goes-nowhere)i
+Problem: Cover the blind spots in Seattle's street safety data through crowdsourcing
 
 Our approach for satisfying this challenge was to:
 
-- Develop an example Git repository
-- Share it on Github
-- Collect feedback from the community
-
-Once we did that, we knew we were guaranteed to win!
+- Identify underreported incidents and other types of citizen input
+- Design a more usable and quick user experience in contrast to existing solutions that includes these additional incidents
+- Develop a completed open source stack from a cross-platform phone application down to a new data service
 
 For the PowerPoint presentation, mock-up images, and other information, check out this Google Folder:
 https://drive.google.com/a/cascadebicycleclub.org/file/d/0B1SDKU5iQGbQM3libUJVSUNISzQ/view?usp=sharing
@@ -27,25 +25,37 @@ https://drive.google.com/a/cascadebicycleclub.org/file/d/0B1SDKU5iQGbQM3libUJVSU
 
 Our team is comprised of:
 
-- [@chrismetcalf](http://github.com/chrismetcalf) - README.md author and all around awesome guy
-- [@torvalds](http://github.com/torvalds) - Wrangler of penguins
-- [@matz](http://github.com/matz) - Miner of Rubies
-- [@gvanrossum](http://github.com/gvanrossum) - Python charmer
+- [@housepage](http://github.com/housepage) - Andrew Gall - Worked on the phone application prototype, Design
+- [@alimon808](https://github.com/alimon808) - Adrian Limon - Backend Developer
+- [@BrockRides](https://github.com/BrockRides) - Brock Howell - Stakeholder, Designer, Project Manager
+- [@dilinger](https://github.com/dilinger) - Andres Solomon - Frontend Developer
+- [@rohanaras](https://github.com/rohanaras) - Rohan Aras - Frontend Developer
+- Graham Thompson - Stakeholder, Technical Adviser
+- Selena Carsiotis - Stakeholder, Community Advocate
+
 
 ## Technologies, APIs, and Datasets Utilized
 
 We made use of:
 
-- Hand harvested unicorn tears. Unicorns are very happy creatures, its hard to make them cry.
-- [mod_bf](http://modbf.sourceforge.net/)
-- The [Top 1,000 Songs To Hear Before You Die](https://opendata.socrata.com/Fun/Top-1-000-Songs-To-Hear-Before-You-Die/ed74-c6ni) dataset and [API](http://dev.socrata.com/foundry/#/opendata.socrata.com/ed74-c6ni)
+For the frontend:
+- Apache Cordova
+- AngularJS
+
+For the backend:
+- ASP.NET Web API for REST-ful APIs
+- MSSQL Server
+- Hosted on Azure
 
 ## Contributing
 
 In order to build and run our app:
 
-1. Harvest yourself some unicorn tears. They're expensive to purchase on your own.
-2. [Deploy your the code](https://github.com/masylum/Brainfuck-on-Rails) to [Heroku](http://heroku.com)
-3. Profit
+1. Install Apache Cordova
+2. `npm install -g grunt-cli`
+3. `npm install` - Install dependencies of build process
+4. `grunt watch`
+5. `cordova serve`
+6. Visit `http://localhost:8000/browser/www`
 
 Our code is licensed under the [MIT License](LICENSE.md). Pull requests will be accepted to this repo, pending review and approval.
