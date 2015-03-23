@@ -54,8 +54,8 @@ In order to build and run our app:
 1. Install Apache Cordova
 2. `npm install -g grunt-cli`
 3. `npm install` - Install dependencies of build process
-4. `grunt watch`
-5. `cordova serve`
+4. `grunt watch` - Compile all coffeescript into application.js
+5. `cordova serve` - Serve files for viewing
 6. Visit `http://localhost:8000/browser/www`
 
 Our code is licensed under the [MIT License](LICENSE.md). Pull requests will be accepted to this repo, pending review and approval.
