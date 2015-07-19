@@ -18,9 +18,6 @@ Our approach for satisfying this challenge was to:
 - Design a more usable and quick user experience in contrast to existing solutions that includes these additional incidents
 - Develop a completed open source stack from a cross-platform phone application down to a new data service
 
-For the PowerPoint presentation, mock-up images, and other information, check out this Google Folder:
-https://drive.google.com/a/cascadebicycleclub.org/file/d/0B1SDKU5iQGbQM3libUJVSUNISzQ/view?usp=sharing
-
 ## Team Members
 
 Our team is comprised of:
@@ -59,3 +56,7 @@ In order to build and run our app:
 6. Visit `http://localhost:8000/browser/www`
 
 Our code is licensed under the [MIT License](LICENSE.md). Pull requests will be accepted to this repo, pending review and approval.
+
+## For More
+For the PowerPoint presentation, mock-up images, and other information, check out this Google Folder:
+https://drive.google.com/a/cascadebicycleclub.org/file/d/0B1SDKU5iQGbQM3libUJVSUNISzQ/view?usp=sharing
